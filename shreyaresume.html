@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shreya Kalaskar — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#6366f1;        /* indigo */
+    --accent:#f97316;         /* warm orange */
+    --bg:#020617;             /* dark background */
+    --bg-soft:#020617;
+    --panel:#0b1220;          /* card background */
+    --panel-soft:#020617;
+    --border:#1e293b;
+    --muted:#94a3b8;
+    --text:#e5e7eb;
+    --nav-h:74px;
+    --max-w:1120px;
+    --shadow:0 22px 60px rgba(15,23,42,0.85);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(99,102,241,0.24), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(249,115,22,0.24), transparent 55%),
+      var(--bg-soft);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    scroll-behavior:smooth;
+  }
+
+  /* NAVBAR */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    height:var(--nav-h);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(2,6,23,0.94);
+    box-shadow:0 14px 40px rgba(15,23,42,0.9);
+    z-index:999;
+    backdrop-filter:blur(12px);
+  }
+  .nav-inner{
+    width:100%;
+    max-width:var(--max-w);
+    padding:0 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:#e5e7eb;
+  }
+  .logo-badge{
+    width:26px;
+    height:26px;
+    border-radius:9px;
+    background:radial-gradient(circle at 20% 20%, #f97316, #6366f1);
+    display:grid;
+    place-items:center;
+    font-size:13px;
+    font-weight:800;
+    color:#0b1120;
+  }
+
+  .nav-center{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .nav-center a{
+    text-decoration:none;
+    color:var(--muted);
+    font-weight:600;
+    font-size:13px;
+    padding:7px 10px;
+    border-radius:999px;
+    text-transform:uppercase;
+    letter-spacing:0.13em;
+    transition:background .18s ease, color .18s ease, transform .18s ease;
+  }
+  .nav-center a:hover,
+  .nav-center a.active{
+    color:#e5e7eb;
+    background:rgba(99,102,241,0.3);
+    transform:translateY(-1px);
+  }
+
+  .btn-nav{
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid rgba(148,163,184,0.6);
+    background:linear-gradient(120deg,#4f46e5,#f97316);
+    color:#f9fafb;
+    font-weight:700;
+    font-size:13px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    box-shadow:0 12px 32px rgba(15,23,42,0.95);
+    cursor:pointer;
+  }
+
+  @media(max-width:880px){
+    .nav-center{ display:none; }
+  }
+
+  .spacer{ height:calc(var(--nav-h) + 10px); }
+
+  main{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:20px 16px 70px;
+  }
+
+  /* SECTION TITLES */
+  .section-title{
+    text-align:left;
+    font-weight:700;
+    color:#e5e7eb;
+    margin:0;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-size:13px;
+  }
+  .section-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .uline{
+    flex:1;
+    height:1px;
+    margin-left:12px;
+    background:linear-gradient(90deg,rgba(148,163,184,0.3),transparent);
+  }
+
+  /* HERO */
+  .hero{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:30px;
+    align-items:center;
+    margin-top:6px;
+  }
+  @media(max-width:880px){
+    .hero{
+      grid-template-columns:1fr;
+      text-align:center;
+    }
+  }
+
+  .hero-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:4px 10px;
+    border-radius:999px;
+    border:1px solid rgba(148,163,184,0.4);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    color:var(--muted);
+    background:rgba(15,23,42,0.7);
+  }
+  .hero-dot{
+    width:7px;
+    height:7px;
+    border-radius:999px;
+    background:#22c55e;
+    box-shadow:0 0 0 5px rgba(34,197,94,0.25);
+  }
+
+  .hero-title{
+    font-size:44px;
+    line-height:1.05;
+    margin:18px 0 6px;
+    font-weight:800;
+    letter-spacing:0.01em;
+    background:linear-gradient(120deg,#e5e7eb,#f97316);
+    -webkit-background-clip:text;
+    color:transparent;
+  }
+  @media(max-width:600px){
+    .hero-title{ font-size:34px; }
+  }
+
+  .hero-sub{
+    font-size:17px;
+    font-weight:600;
+    color:#cbd5f5;
+    margin-bottom:10px;
+  }
+  .hero-desc{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+    max-width:520px;
+  }
+  @media(max-width:880px){
+    .hero-desc{ margin:0 auto; }
+  }
+
+  .hero-actions{
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  @media(max-width:880px){
+    .hero-actions{ justify-content:center; }
+  }
+
+  .btn-primary{
+    background:linear-gradient(120deg,#4f46e5,#f97316);
+    color:#f9fafb;
+    padding:10px 20px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    box-shadow:0 14px 36px rgba(15,23,42,0.9);
+  }
+  .btn-ghost{
+    padding:9px 18px;
+    border-radius:999px;
+    border:1px solid rgba(148,163,184,0.7);
+    font-size:13px;
+    font-weight:600;
+    background:transparent;
+    color:#e5e7eb;
+    text-decoration:none;
+  }
+
+  .social-row{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+  }
+  @media(max-width:880px){
+    .social-row{ justify-content:center; }
+  }
+  .social{
+    width:38px;
+    height:38px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#020617;
+    border:1px solid rgba(148,163,184,0.6);
+    color:#e5e7eb;
+    text-decoration:none;
+    font-size:17px;
+    transition:background .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .social:hover{
+    background:#f97316;
+    border-color:#f97316;
+    transform:translateY(-1px);
+  }
+
+  .hero-right{
+    display:flex;
+    justify-content:flex-end;
+  }
+  @media(max-width:880px){
+    .hero-right{ justify-content:center; }
+  }
+  .profile-card{
+    width:320px;
+    border-radius:26px;
+    background:radial-gradient(circle at top left, rgba(99,102,241,0.4), transparent 60%),
+               radial-gradient(circle at bottom right, rgba(249,115,22,0.35), transparent 60%),
+               #020617;
+    border:1px solid rgba(148,163,184,0.4);
+    box-shadow:var(--shadow);
+    padding:18px 16px 18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .profile-photo{
+    width:100%;
+    height:190px;
+    border-radius:18px;
+    overflow:hidden;
+    background:#020617;
+    border:1px solid rgba(148,163,184,0.45);
+  }
+  .profile-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .profile-info{
+    margin-top:12px;
+    font-size:13px;
+  }
+  .tag-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:8px;
+  }
+  .tag{
+    font-size:11px;
+    padding:4px 8px;
+    border-radius:999px;
+    border:1px solid rgba(148,163,184,0.6);
+    background:rgba(15,23,42,0.8);
+    color:var(--muted);
+  }
+
+  /* GRID SECTIONS */
+  .two-col{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:22px;
+    margin-top:22px;
+  }
+  @media(max-width:880px){
+    .two-col{ grid-template-columns:1fr; }
+  }
+
+  .card{
+    background:var(--panel);
+    border-radius:20px;
+    padding:18px 16px 18px;
+    border:1px solid var(--border);
+    box-shadow:0 18px 55px rgba(15,23,42,0.8);
+  }
+
+  .card-title{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+
+  .card-sub{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
+
+  .timeline{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:8px;
+  }
+  .timeline-item{
+    padding:10px 10px 10px 12px;
+    border-radius:14px;
+    border:1px solid rgba(148,163,184,0.4);
+    background:rgba(15,23,42,0.85);
+  }
+  .timeline-role{
+    font-size:14px;
+    font-weight:600;
+  }
+  .timeline-place{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .timeline-meta{
+    font-size:11px;
+    color:#cbd5f5;
+    margin-top:3px;
+  }
+  .timeline-desc{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:5px;
+    line-height:1.6;
+  }
+
+  /* SKILLS */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:14px;
+  }
+  @media(max-width:720px){
+    .skills-grid{ grid-template-columns:1fr; }
+  }
+  .skill-chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+  }
+  .skill-chip{
+    padding:5px 10px;
+    border-radius:999px;
+    background:rgba(15,23,42,0.9);
+    border:1px solid rgba(148,163,184,0.6);
+    font-size:12px;
+    color:#e5e7eb;
+  }
+
+  .skill-item{
+    margin-top:8px;
+  }
+  .skill-label{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:#cbd5f5;
+    margin-bottom:4px;
+  }
+  .bar{
+    height:7px;
+    border-radius:999px;
+    background:#020617;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(90deg,#6366f1,#f97316);
+  }
+
+  /* PROJECTS */
+  .projects-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:16px;
+  }
+  @media(max-width:880px){
+    .projects-grid{ grid-template-columns:1fr; }
+  }
+  .project-card{
+    border-radius:18px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    padding:14px 14px 16px;
+  }
+  .project-head{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .icon{
+    width:40px;
+    height:40px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:radial-gradient(circle at 20% 0%, rgba(249,115,22,0.65), rgba(99,102,241,0.5));
+    font-size:20px;
+  }
+  .project-title{
+    font-size:14px;
+    font-weight:700;
+  }
+  .project-tagline{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .project-body{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:8px;
+    line-height:1.6;
+  }
+  .project-body ul{
+    padding-left:18px;
+    margin:6px 0 0;
+  }
+
+  /* CONTACT */
+  .contact-panel{
+    margin-top:16px;
+    border-radius:20px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    padding:16px 16px 18px;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:10px;
+  }
+  @media(max-width:720px){
+    .contact-grid{ grid-template-columns:1fr; }
+  }
+  .c-card{
+    border-radius:16px;
+    border:1px solid rgba(148,163,184,0.5);
+    background:#020617;
+    padding:10px 11px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#e5e7eb;
+    font-size:13px;
+  }
+  .cicon{
+    width:38px;
+    height:38px;
+    border-radius:999px;
+    display:grid;
+    place-items:center;
+    background:#111827;
+    color:#f97316;
+    font-size:18px;
+  }
+
+  .achievements-list{
+    list-style:none;
+    padding-left:0;
+    margin:8px 0 0;
+    font-size:12px;
+    color:var(--muted);
+  }
+  .achievements-list li{
+    position:relative;
+    padding-left:14px;
+    margin-bottom:4px;
+  }
+  .achievements-list li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:#f97316;
+  }
+
+  footer{
+    margin-top:28px;
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-badge">SK</div>
+      <span>Shreya Kalaskar</span>
+    </div>
+
+    <nav class="nav-center" aria-label="Main menu">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#experience" class="nav-link">Internships</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <a class="btn-nav" href="#contact">Hire Me</a>
+  </div>
+</header>
+
+<div class="spacer" aria-hidden="true"></div>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="section">
+    <div class="hero">
+      <div>
+        <div class="hero-kicker">
+          <span class="hero-dot"></span>
+          <span>Electronics Engineering • 2023–2027</span>
+        </div>
+        <h1 class="hero-title">Shreya<br>Kalaskar</h1>
+        <div class="hero-sub">B.Tech Electronics Engineering Student — MIT Academy of Engineering, Pune</div>
+        <p class="hero-desc">
+          I am an Electronics Engineering student with a CGPA of 7.73/10, interested in 
+          communication systems, electronics hardware and PCB design. I’ve gained hands-on
+          exposure through internships at BSNL (Telecom) and NANA Industries (battery
+          charger manufacturing). I enjoy learning how real-world electronic systems are 
+          designed, built, and maintained.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="#experience">View Internships ↗</a>
+          <a class="btn-ghost" href="#education">Education</a>
+        </div>
+
+        <div class="social-row">
+          <!-- Replace with real profiles when available -->
+          <a class="social" href="mailto:202402060006@mitaoe.ac.in" title="Email">✉</a>
+          <a class="social" href="tel:+919322195259" title="Phone">📞</a>
+          <a class="social" href="https://www.linkedin.com" target="_blank" title="LinkedIn">in</a>
+          <a class="social" href="https://github.com" target="_blank" title="GitHub">🐱</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <aside class="profile-card">
+          <div class="profile-photo">
+            <!-- Put your own image file instead of placeholder if you have one -->
+            <img src="./img/profile.jpg"
+                 alt="Shreya Kalaskar"
+                 onerror="this.onerror=null;this.src='https://via.placeholder.com/400x260.png?text=Shreya+Kalaskar';">
+          </div>
+          <div class="profile-info">
+            <div style="font-size:14px;font-weight:600;">Based in Pune, Maharashtra</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px;">
+              Kate Nagar Colony No. 3, Alandi Pune Road, Charoli — 412105
+            </div>
+            <div class="tag-row">
+              <span class="tag">Electronics Engineering</span>
+              <span class="tag">Telecom</span>
+              <span class="tag">PCB Design</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + QUICK INFO -->
+  <section id="about" class="section" style="margin-top:28px;">
+    <div class="section-header">
+      <h2 class="section-title">About</h2>
+      <div class="uline"></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Who I Am</div>
+        <div class="card-sub">Profile</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;">
+          I’m <strong>Shreya Kalaskar</strong>, a B.Tech Electronics Engineering student at
+          <strong>MIT Academy of Engineering, Pune</strong> (2023–2027). I completed my diploma
+          in Electronics & Telecommunication with 83.53% and my 10th with 79.8%. I’m curious
+          about how communication networks and electronic systems work in practice, not just
+          in theory.
+        </p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:10px;">
+          Through my internships and workshops, I’ve been exposed to telecom infrastructure,
+          battery charger manufacturing, and PCB design workflows. I enjoy learning by
+          observing real hardware and asking “why” at every step.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Quick Facts</div>
+        <div class="card-sub">Details</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.9;">
+          <strong>Full Name:</strong> Kalaskar Shreya Lakshaman<br>
+          <strong>Gender:</strong> Female &nbsp; | &nbsp; <strong>Marital Status:</strong> Single<br>
+          <strong>CGPA (B.Tech):</strong> 7.73 / 10<br>
+          <strong>Languages:</strong> Hindi, English, Marathi<br>
+          <strong>Phone:</strong> +91&nbsp;93221&nbsp;95259<br>
+          <strong>Email (college):</strong> 202402060006@mitaoe.ac.in<br>
+          <strong>Email (personal):</strong> kalaskarshreya11@gmail.com
+        </div>
+
+        <div style="margin-top:12px;font-size:13px;color:var(--muted);">
+          <strong>Interests:</strong> playing outdoor games, reading books, and
+          participating in event management activities.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & INTERNSHIPS -->
+  <section id="education" class="section" style="margin-top:28px;">
+    <div class="section-header">
+      <h2 class="section-title">Education</h2>
+      <div class="uline"></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Academic Background</div>
+        <div class="card-sub">Degrees</div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-role">B.Tech — Electronics Engineering</div>
+            <div class="timeline-place">MIT Academy of Engineering, Pune</div>
+            <div class="timeline-meta">2023 – 2027 &nbsp;|&nbsp; CGPA: 7.73 / 10</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">Diploma — Electronics & Telecommunication</div>
+            <div class="timeline-place">Abhinav Education Society’s College of Polytechnic, Wadwadi, Satara</div>
+            <div class="timeline-meta">Completed 2023 &nbsp;|&nbsp; MSBTE &nbsp;|&nbsp; 83.53%</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">SSC (10th)</div>
+            <div class="timeline-place">Ramchandra Gaikwad Madhyamik Vidyalaya, Dighi Pune-15</div>
+            <div class="timeline-meta">Completed 2021 &nbsp;|&nbsp; 79.80%</div>
+          </div>
+        </div>
+      </div>
+
+      <section id="experience" class="card">
+        <div class="card-title">Internships</div>
+        <div class="card-sub">Industry Exposure</div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-role">Telecom Trainee — BSNL</div>
+            <div class="timeline-place">Bharat Sanchar Nigam Limited (BSNL)</div>
+            <div class="timeline-meta">18 Jun 2025 – 05 Jul 2025</div>
+            <div class="timeline-desc">
+              Learned how telecommunication systems operate at an infrastructure level,
+              including switching, routing and how calls/data are carried over the network.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">Assistant — NANA Industries</div>
+            <div class="timeline-place">Core Engineering | Battery Charger Manufacturing</div>
+            <div class="timeline-meta">07 Jun 2023 – 29 Jul 2023</div>
+            <div class="timeline-desc">
+              Completed a 2-month internship at a small-scale battery charger manufacturing
+              company, gaining exposure to production, testing and basic electronics
+              hardware handling in an industrial environment.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- SKILLS / WORKSHOPS -->
+  <section id="skills" class="section" style="margin-top:28px;">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Training</h2>
+      <div class="uline"></div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="skills-grid">
+        <div>
+          <div class="card-sub" style="margin-bottom:4px;">Technical</div>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Electronics Fundamentals</span>
+            <span class="skill-chip">Telecommunication Basics</span>
+            <span class="skill-chip">PCB Design Concepts</span>
+            <span class="skill-chip">Battery Charger Circuits (Basics)</span>
+            <span class="skill-chip">Computer & Internet Skills</span>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label"><span>Electronics & Telecom</span><span>Intermediate</span></div>
+            <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>PCB Design (Espark Tech)</span><span>Beginner–Intermediate</span></div>
+            <div class="bar"><div class="bar-fill" style="width:55%"></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-sub" style="margin-bottom:4px;">Workshops & Soft Skills</div>
+          <p style="font-size:13px;color:var(--muted);line-height:1.7;margin:0;">
+            <strong>Espark Tech Workshop</strong><br>
+            Abhinav Education Society’s College of Engineering & Technology (Polytechnic)<br>
+            Training on <strong>PCB Design</strong> and how to use different PCB design software tools.
+          </p>
+
+          <div style="margin-top:10px;font-size:13px;color:var(--muted);">
+            <strong>Soft Skills:</strong>
+          </div>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Teamwork</span>
+            <span class="skill-chip">Event Management</span>
+            <span class="skill-chip">Communication</span>
+            <span class="skill-chip">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / ACTIVITIES -->
+  <section id="projects" class="section" style="margin-top:28px;">
+    <div class="section-header">
+      <h2 class="section-title">Highlights</h2>
+      <div class="uline"></div>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-head">
+          <div class="icon">🏫</div>
+          <div>
+            <div class="project-title">Electronics & Telecom Journey</div>
+            <div class="project-tagline">From Diploma to B.Tech</div>
+          </div>
+        </div>
+        <div class="project-body">
+          Built a strong base in <strong>Electronics & Telecommunication</strong> during diploma and
+          continued with a B.Tech in Electronics Engineering at MITAOE, working consistently and
+          maintaining a good academic record.
+          <ul>
+            <li>Diploma in E&TC with 83.53% (MSBTE).</li>
+            <li>B.Tech CGPA: 7.73 / 10 (ongoing).</li>
+            <li>Interest in communication systems and hardware.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-head">
+          <div class="icon">🛰️</div>
+          <div>
+            <div class="project-title">Telecom Exposure at BSNL</div>
+            <div class="project-tagline">Understanding Networks</div>
+          </div>
+        </div>
+        <div class="project-body">
+          Short-term trainee at BSNL to see how real-world telecom infrastructure works.
+          <ul>
+            <li>Observed how calls and data travel across networks.</li>
+            <li>Got an overview of switching and routing concepts.</li>
+            <li>Connected classroom telecom theory with actual hardware.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-head">
+          <div class="icon">🔋</div>
+          <div>
+            <div class="project-title">Battery Charger Manufacturing</div>
+            <div class="project-tagline">Internship at NANA Industries</div>
+          </div>
+        </div>
+        <div class="project-body">
+          Worked as an assistant at a small-scale battery charger manufacturing company.
+          <ul>
+            <li>Got exposure to production and testing environments.</li>
+            <li>Observed how electronic products are assembled and checked.</li>
+            <li>Understood importance of quality and documentation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-head">
+          <div class="icon">🏅</div>
+          <div>
+            <div class="project-title">Achievements & Activities</div>
+            <div class="project-tagline">Beyond Academics</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <ul class="achievements-list">
+            <li>Second prize in Chess competition.</li>
+            <li>Second prize in Badminton competition.</li>
+            <li>Active participation in event management team.</li>
+          </ul>
+          <p style="margin-top:8px;">
+            These activities helped me build focus, discipline, and teamwork, which I also apply
+            to my academic and technical work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section" style="margin-top:30px;">
+    <div class="section-header">
+      <h2 class="section-title">Contact</h2>
+      <div class="uline"></div>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin-top:10px;">
+      I’m open to internships, industrial visits, and collaboration opportunities in Electronics
+      and Telecom. Feel free to reach out via email or phone.
+    </p>
+
+    <div class="contact-panel">
+      <div class="contact-grid">
+        <a class="c-card" href="mailto:202402060006@mitaoe.ac.in">
+          <div class="cicon">📧</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">College Email</div>
+            <div style="font-size:12px;color:var(--muted);">202402060006@mitaoe.ac.in</div>
+          </div>
+        </a>
+
+        <a class="c-card" href="mailto:kalaskarshreya11@gmail.com">
+          <div class="cicon">✉</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">Personal Email</div>
+            <div style="font-size:12px;color:var(--muted);">kalaskarshreya11@gmail.com</div>
+          </div>
+        </a>
+
+        <a class="c-card" href="tel:+919322195259">
+          <div class="cicon">📞</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">Phone</div>
+            <div style="font-size:12px;color:var(--muted);">+91 93221 95259</div>
+          </div>
+        </a>
+
+        <div class="c-card">
+          <div class="cicon">📍</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">Location</div>
+            <div style="font-size:12px;color:var(--muted);">
+              Kate Nagar Colony No. 3, Alandi Pune Road, Charoli, Pune, Maharashtra — 412105
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:16px;">
+        <a class="btn-primary" href="mailto:202402060006@mitaoe.ac.in">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <strong>Shreya Kalaskar</strong> — Electronics Engineering • MITAOE
+  </footer>
+</main>
+
+<script>
+  // Smooth scroll with header offset and active nav highlight
+  (function(){
+    const navLinks = Array.from(document.querySelectorAll('.nav-center a'));
+    const ids = ['home','about','education','experience','skills','projects','contact'];
+    const header = document.querySelector('header');
+    function navHeight(){ return (header?.offsetHeight || 74) + 8; }
+
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - navHeight();
+      window.scrollTo({ top, behavior:'smooth' });
+    }
+
+    navLinks.forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.getAttribute('href').replace('#','');
+        scrollToId(id);
+        history.replaceState(null,'','#'+id);
+      });
+    });
+
+    function onScroll(){
+      const pos = window.scrollY + window.innerHeight/4;
+      let cur = 'home';
+      ids.forEach(id=>{
+        const el = document.getElementById(id);
+        if(!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if(pos >= top) cur = id;
+      });
+      navLinks.forEach(a =>
+        a.classList.toggle('active', a.getAttribute('href') === '#'+cur)
+      );
+    }
+
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    if(location.hash){
+      const id = location.hash.slice(1);
+      setTimeout(()=> scrollToId(id), 60);
+    }
+  })();
+</script>
+
+</body>
+</html>

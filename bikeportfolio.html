@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Used Bike Price Predictor – Project Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* ====== GLOBAL STYLES ====== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #0b0f2e, #1d1f47, #0f0f25);
+        color: #f4f9ff;
+        padding: 30px 10px;
+    }
+    .wrapper {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 26px 24px 30px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 8px 35px rgba(0,0,0,0.55);
+        backdrop-filter: blur(18px);
+    }
+
+    /* ====== HEADERS / TEXT ====== */
+    h1 {
+        text-align: center;
+        color: #00eaff;
+        text-shadow: 0 0 12px #00eaff;
+        margin-bottom: 6px;
+        font-size: 28px;
+    }
+    h2 {
+        color: #00eaff;
+        margin-top: 22px;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+    h3 {
+        color: #9deaff;
+        margin-bottom: 6px;
+        font-size: 16px;
+    }
+    p {
+        line-height: 1.6;
+        font-size: 14.5px;
+        margin-bottom: 6px;
+    }
+    ul {
+        list-style: disc;
+        padding-left: 24px;
+        margin-bottom: 6px;
+    }
+    li {
+        font-size: 14.5px;
+        line-height: 1.6;
+        margin-bottom: 4px;
+    }
+
+    .tagline {
+        text-align: center;
+        font-size: 14px;
+        color: #d0f6ff;
+        margin-bottom: 16px;
+    }
+
+    /* ====== INFO BOXES & TABLES ====== */
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 14px;
+        margin-bottom: 8px;
+    }
+    .card {
+        background: rgba(0,0,0,0.32);
+        border-radius: 14px;
+        padding: 12px 14px;
+        border: 1px solid rgba(255,255,255,0.25);
+    }
+    .card small {
+        font-size: 12px;
+        opacity: 0.85;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+    th, td {
+        padding: 8px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        text-align: left;
+    }
+    th {
+        background: rgba(0,0,0,0.35);
+        font-weight: 600;
+    }
+
+    .highlight-box {
+        margin-top: 10px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid rgba(255,255,255,0.25);
+        font-size: 14px;
+    }
+    .section-divider {
+        margin: 18px 0 10px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    }
+
+    .mini-badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(0,234,255,0.2);
+        font-size: 11px;
+        margin-left: 4px;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 600px) {
+        .wrapper {
+            padding: 20px 16px 24px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- TITLE -->
+    <h1>Used Bike Price Predictor</h1>
+    <div class="tagline">
+        A web-based tool to estimate the fair resale price of used bikes using rule-based pricing logic and a modern UI.
+    </div>
+
+    <!-- BASIC PROJECT / INSTITUTE INFO -->
+    <div class="info-grid">
+        <div class="card">
+            <h3>Course Details</h3>
+            <p><b>Course:</b> Introduction to Programming (230670L)</p>
+            <p><b>Institute:</b> MIT Academy of Engineering (MITAOE), Alandi, Pune</p>
+        </div>
+        <div class="card">
+            <h3>Guide</h3>
+            <p><b>Project Guide:</b> Dr. Rashmi Mahajan</p>
+            <small>Guided the design, development and documentation of the project.</small>
+        </div>
+    </div>
+
+    <!-- TEAM TABLE -->
+    <h2>Project Team</h2>
+    <table>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Student Name</th>
+            <th>PRN</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Shreya Kalaskar</td>
+            <td>202402060006</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Vaishnavi Shinde</td>
+            <td>202402060016</td>
+        </tr>
+    </table>
+
+    <div class="section-divider"></div>
+
+    <!-- OBJECTIVE & PROBLEM -->
+    <h2>Objective</h2>
+    <p>
+        The main objective of this project is to develop a web-based system that can estimate the
+        resale price of a used bike based on measurable parameters such as brand, model year,
+        kilometers driven, number of owners and city. The tool aims to replace guesswork and
+        negotiation-based pricing with a transparent and logical price estimation.
+    </p>
+
+    <h2>Problem Statement</h2>
+    <p>
+        In the current second-hand bike market, there is no standard valuation mechanism.
+        Prices are mostly decided through personal judgement, bargaining skills and scattered
+        market references. This leads to:
+    </p>
+    <ul>
+        <li>Overpricing for buyers or underpricing for sellers.</li>
+        <li>Lack of transparency and mistrust between parties.</li>
+        <li>No clear understanding of how factors like age, kilometers and ownership affect price.</li>
+    </ul>
+    <p>
+        Hence, a simple, user-friendly and data-driven price prediction system is required to bring
+        fairness and consistency to used bike valuation.
+    </p>
+
+    <div class="section-divider"></div>
+
+    <!-- TECH STACK -->
+    <h2>Technology Stack</h2>
+    <ul>
+        <li><b>HTML5</b> – To structure the user interface and input form.</li>
+        <li><b>CSS3</b> – For styling, including glassmorphism card, gradient background and responsive layout.</li>
+        <li><b>JavaScript</b> – To validate inputs, apply pricing logic, calculate final price and update the result dynamically.</li>
+        <li><b>Architecture:</b> 100% client-side execution in the browser; no backend or database required.</li>
+    </ul>
+
+    <!-- FEATURES -->
+    <h2>Key Features</h2>
+    <ul>
+        <li>Clean and aligned form for user inputs (brand, year, kilometers, owners, city).</li>
+        <li>Rule-based price prediction that simulates real-world depreciation and market behavior.</li>
+        <li>Factor-wise breakdown:
+            <ul>
+                <li>Age Impact</li>
+                <li>Kilometers Impact</li>
+                <li>Owner Impact</li>
+                <li>Brand Value</li>
+                <li>City Premium</li>
+            </ul>
+        </li>
+        <li>Decision-support output including:
+            <ul>
+                <li>Key valuation factors</li>
+                <li>Buyer tips</li>
+                <li>Seller tips</li>
+                <li>Similar bike suggestions</li>
+            </ul>
+        </li>
+        <li>Instant prediction without page reload and smooth user experience.</li>
+    </ul>
+
+    <div class="highlight-box">
+        <b>Pricing Formula</b><br>
+        Final Price = Base Price − Age Impact − Kilometer Impact + Owner Impact + Brand Value + City Premium  
+        <br><br>
+        A minimum floor value is enforced so that even old or highly used bikes do not show an unrealistically low price.
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ARCHITECTURE / WORKFLOW -->
+    <h2>Architecture & Workflow</h2>
+    <p>
+        The application follows a simple client-side architecture:
+    </p>
+    <ul>
+        <li><b>Input Phase:</b> User enters bike details via form controls.</li>
+        <li><b>Validation:</b> JavaScript checks for missing or invalid values. If invalid, an alert is shown and the user re-enters data.</li>
+        <li><b>Pricing Logic:</b> Depreciation is applied based on age and kilometers, while owner count adjusts the price further. Brand value and city premium are added on top.</li>
+        <li><b>Result Display:</b> The predicted price and factor breakdown are rendered in the result area on the same page.</li>
+        <li><b>Decision Support:</b> Buyer tips, seller tips and similar bikes are displayed to assist in negotiation and decision-making.</li>
+        <li><b>Predict Again:</b> Users can modify inputs and instantly recalculate.</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <!-- TESTING -->
+    <h2>Results & Testing</h2>
+    <h3>Functional Testing</h3>
+    <ul>
+        <li>Input validation works correctly, preventing empty or invalid submissions.</li>
+        <li>Price calculation produces stable and realistic values for various combinations.</li>
+        <li>Result section appears only after prediction, keeping the UI clean initially.</li>
+    </ul>
+
+    <h3>Performance & Cross-Browser Testing</h3>
+    <ul>
+        <li>Page loads in under a second with very low CPU and memory usage.</li>
+        <li>Tested successfully on Chrome, Firefox, Edge and Safari.</li>
+        <li>JavaScript execution and UI interactions remain smooth on laptop and mobile screens.</li>
+    </ul>
+
+    <h3>User Acceptance</h3>
+    <ul>
+        <li>Users found the interface simple and easy to understand.</li>
+        <li>Factor-wise breakdown increased confidence in the predicted price.</li>
+        <li>Predictions were close to real resale values from the current market.</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <!-- CONCLUSION & FUTURE SCOPE -->
+    <h2>Conclusion</h2>
+    <p>
+        The Used Bike Price Predictor project demonstrates how front-end technologies can be
+        effectively combined with logical pricing rules to solve a real-world problem.
+        The system provides a transparent and understandable valuation process for used bikes,
+        reducing dependence on bargaining and guesswork. It helps both buyers and sellers make
+        informed decisions with more confidence.
+    </p>
+
+    <h2>Future Scope</h2>
+    <ul>
+        <li>Integrating a backend database to store historical prices and user-generated listings.</li>
+        <li>Training a <b>machine learning model</b> on real market data to improve prediction accuracy.</li>
+        <li>Scraping or connecting to online resale platforms to adjust values with live market trends.</li>
+        <li>Adding user accounts, dealer dashboards and a full marketplace for buying and selling bikes.</li>
+        <li>Developing a mobile app version and supporting multiple Indian languages for wider adoption.</li>
+    </ul>
+
+    <div class="section-divider"></div>
+
+    <!-- OPTIONAL OUTPUT SECTION -->
+    <h2>Sample Output Screens</h2>
+    <p>
+        You can insert screenshots of the working web application here, such as:
+    </p>
+    <ul>
+        <li>Home screen with the Used Bike Price Predictor input form.</li>
+        <li>Result section showing predicted price and factor breakdown.</li>
+    </ul>
+    <!-- <img src="output1.png" alt="Prediction Form Screenshot" style="width:100%;border-radius:14px;margin:8px 0;">
+    <img src="output2.png" alt="Result Screenshot" style="width:100%;border-radius:14px;margin:8px 0;"> -->
+    <p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">
+        (Uncomment the &lt;img&gt; tags above and replace <code>output1.png</code> / <code>output2.png</code> with your actual screenshot file names.)
+    </p>
+
+</div>
+
+</body>
+</html>
